@@ -1,0 +1,500 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Home{% endblock %}
+
+{% block navbar-left %}
+  {% include "_navbar.html" with active_link="home" %}
+{% endblock %}
+
+{% block navbar-right %}
+  {% if not user.is_authenticated %}
+<a class="btn btn-default" href="{% url 'accounts:login' %}" role="button">Log in</a>
+<a class="btn btn-primary" href="{% url 'accounts:signup' %}" role="button">Sign up</a>
+  {% else %}
+    {{ block.super }}
+  {% endif %}
+{% endblock %}
+
+{% block splash %}
+  <div class="jumbotron jumbotron-carousel corporate-jumbo">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-8">
+          <h1>{% include "_brandname.html" %}</h1>
+          <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+	  <a class="btn btn-primary" href="{% url 'accounts:signup' %}" role="button">Sign up for Free!</a>
+        </div>
+        <div class="col-md-4 col-sm-4">
+
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock splash %}
+{% block navdots %}
+<!-- Side nav -->
+    <nav class="side-nav" role="navigation">
+
+      <ul class="nav-side-nav">
+        <li><a class="tooltip-side-nav" href="#section-1" data-container="body" title="" data-original-title="Folie dla Poligrafii" data-placement="left"></a></li>
+        <li><a class="tooltip-side-nav" href="#section-2" data-container="body" title="" data-original-title="Folie dla branży Opakowań" data-placement="left"></a></li>
+        <li><a class="tooltip-side-nav" href="#section-3" data-container="body" title="" data-original-title="Efekty UV" data-placement="left"></a></li>
+        <li><a class="tooltip-side-nav" href="#to-top" title="" data-original-title="Do_góry" data-placement="left"></a></li>
+      </ul>
+
+    </nav> <!-- /.side-nav -->
+{% endblock %}
+{% block container %}
+<!-- Benefits of the Django application -->
+<a name="about"></a>
+
+<!-- Services -->
+    <section class="services-section" id="section-1">
+
+      <div class="container">
+
+    <h3>Folie dla Poligrafii</h3>
+          <div class="col-lg-12">
+          <div class="row">
+          <section id="projects">
+          <ul id="thumbs" class="portfolio">
+            <!-- Item Project and Filter Name -->
+            <li class="col-lg-3 design" data-id="id-0" data-type="web">
+            <div class="item-thumbs">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Folia strukturalna" href="{% static 'site/img/works/folia-strukturalna-aluminium-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/folia-strukturalna-aluminium-s.jpg' %}" alt="Efekt szczotkowanego aluminium, druk na metalizie.">
+            </div>
+            </li>
+            <!-- End Item Project -->
+            <!-- Item Project and Filter Name -->
+            <li class="item-thumbs col-lg-3 design" data-id="id-1" data-type="icon">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Folia błyszcząca" href="{% static 'site/img/works/folia-blyszczaca-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/folia-blyszczaca-s.jpg' %}" alt="">
+            </li>
+            <!-- End Item Project -->
+            <!-- Item Project and Filter Name -->
+            <li class="item-thumbs col-lg-3 photography" data-id="id-2" data-type="illustrator">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Folia matowa" href="{% static 'site/img/works/folia-matowa-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/folia-matowa-s.jpg' %}" alt="">
+            </li>
+            <!-- End Item Project -->
+            <!-- Item Project and Filter Name -->
+            <li class="item-thumbs col-lg-3 photography" data-id="id-3" data-type="illustrator">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Folia matowa Achilles" href="{% static 'site/img/works/folia-matowa-achilles-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/folia-matowa-achilles-s.jpg' %}" alt="Folia z kolekcji Achilles, odporna na zarysowania">
+            </li>
+            <!-- End Item Project -->
+          </ul>
+          </section>
+          </div><!-- /.row -->
+          <div class="row">
+          <section id="projects">
+          <ul id="thumbs" class="portfolio">
+            <!-- Item Project and Filter Name -->
+            <li class="col-lg-3 design" data-id="id-0" data-type="web">
+            <div class="item-thumbs">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Folia aksamitna" href="{% static 'site/img/works/folia-aksamitna-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/folia-aksamitna-s.jpg' %}" alt="Folia typu 'Soft touch'">
+            </div>
+            </li>
+            <!-- End Item Project -->
+            <!-- Item Project and Filter Name -->
+            <li class="item-thumbs col-lg-3 design" data-id="id-1" data-type="icon">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Folia półmatowa" href="{% static 'site/img/works/folia-polmatowa-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/folia-polmatowa-s.jpg' %}" alt="">
+            </li>
+            <!-- End Item Project -->
+            <!-- Item Project and Filter Name -->
+            <li class="item-thumbs col-lg-3 photography" data-id="id-2" data-type="illustrator">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Folia strukturalna Achilles" href="{% static 'site/img/works/folia-skora-matowa-achilles-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/folia-skora-matowa-achilles-s.jpg' %}" alt="Folia Achilles nadająca efekt skóry, matowa.">
+            </li>
+            <!-- End Item Project -->
+            <!-- Item Project and Filter Name -->
+            <li class="item-thumbs col-lg-3 photography" data-id="id-3" data-type="illustrator">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Folia strukturalna Achilles" href="{% static 'site/img/works/folia-len-matowa-achilles-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/folia-len-matowa-achilles-s.jpg' %}" alt="Folia Achilles nadająca efekt lnu, matowa.">
+            </li>
+            <!-- End Item Project -->
+          </ul>
+          </section>
+          </div> <!-- second row -->
+          <div class="row">
+          <section id="projects">
+          <ul id="thumbs" class="portfolio">
+            <!-- Item Project and Filter Name -->
+            <li class="col-lg-3 design" data-id="id-0" data-type="web">
+            <div class="item-thumbs">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Folia strukturalna" href="{% static 'site/img/works/folia-strukturalna-len-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/folia-strukturalna-len-s.jpg' %}" alt="Folia nadająca efekt lnu.">
+            </div>
+            </li>
+            <!-- End Item Project -->
+            <!-- Item Project and Filter Name -->
+            <li class="item-thumbs col-lg-3 design" data-id="id-1" data-type="icon">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Folia strukturalna" href="{% static 'site/img/works/folia-strukturalna-skora-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/folia-strukturalna-skora-s.jpg' %}" alt="Folia nadająca efekt skóry.">
+            </li>
+            <!-- End Item Project -->
+            <!-- Item Project and Filter Name -->
+            <li class="item-thumbs col-lg-3 photography" data-id="id-2" data-type="illustrator">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Folia strukturalna" href="{% static 'site/img/works/folia-strukturalna-aluminium-02.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/folia-strukturalna-aluminium-02-s.jpg' %}" alt="Folia nadająca efekt szczotkowanego aluminium.">
+            </li>
+            <!-- End Item Project -->
+            <!-- Item Project and Filter Name -->
+            <li class="item-thumbs col-lg-3 photography" data-id="id-3" data-type="illustrator">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Folia strukturalna" href="{% static 'site/img/works/folia-strukturalna-perla-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/folia-strukturalna-perla-s.jpg' %}" alt="Folia nadająca efekt perły.">
+            </li>
+            <!-- End Item Project -->
+          </ul>
+          </section>
+          </div> <!-- third row -->
+          <div class="row">
+          <section id="projects">
+          <ul id="thumbs" class="portfolio">
+            <!-- Item Project and Filter Name -->
+            <li class="col-lg-3 design" data-id="id-0" data-type="web">
+            <div class="item-thumbs">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Folia strukturalna" href="{% static 'site/img/works/folia-strukturalna-kropki-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/folia-strukturalna-kropki-01-s.jpg' %}" alt="Folia nadająca efekt kropek.">
+            </div>
+            </li>
+            <!-- End Item Project -->
+            <!-- Item Project and Filter Name -->
+            <li class="item-thumbs col-lg-3 design" data-id="id-1" data-type="icon">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Folia kalandrowana błyszcząca" href="{% static 'site/img/works/folia-kalandrowana-blyszczaca-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/folia-kalandrowana-blyszczaca-01-s.jpg' %}" alt="">
+            </li>
+            <!-- End Item Project -->
+            <!-- Item Project and Filter Name -->
+            <li class="item-thumbs col-lg-3 photography" data-id="id-2" data-type="illustrator">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Folia kalandrowana matowa" href="{% static 'site/img/works/folia-kalandrowana-matowa-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/folia-kalandrowana-matowa-01-s.jpg' %}" alt="">
+            </li>
+            <!-- End Item Project -->
+
+          </ul>
+          </section>
+          </div> <!-- .fourth row -->
+        </div> <!-- .col-12 -->
+
+      </div> <!-- /.container -->
+
+    </section> <!-- /.services-section -->
+<!-- Features -->
+    <section class="features-section" id="section-2">
+
+      <div class="container">
+
+
+      <div class="row">
+       <div class="col-lg-12">
+        <h3>Folie dla Opakowań</h3>
+      <section id="projects">
+      	<div class="row">
+
+          <ul id="thumbs" class="portfolio">
+            <!-- Item Project and Filter Name -->
+            <li class="col-lg-3 design" data-id="id-0" data-type="web">
+            <div class="item-thumbs">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Folia PET transparentna" href="{% static 'site/img/works/folia-pet-transparentna-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/folia-pet-transparentna-01-s.jpg' %}" alt="">
+            </div>
+            </li>
+            <!-- End Item Project -->
+            <!-- Item Project and Filter Name -->
+            <li class="item-thumbs col-lg-3 design" data-id="id-1" data-type="icon">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Folia PET srebrna" href="{% static 'site/img/works/folia-pet-srebrna-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/folia-pet-srebrna-01-s.jpg' %}" alt="">
+            </li>
+            <!-- End Item Project -->
+            <!-- Item Project and Filter Name -->
+            <li class="item-thumbs col-lg-3 photography" data-id="id-2" data-type="illustrator">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Folia PET dająca barwny efekt tęczy" href="{% static 'site/img/works/folia-pet-tecza-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/folia-pet-tecza-01s.jpg' %}" alt="">
+            </li>
+            <!-- End Item Project -->
+            <!-- Item Project and Filter Name -->
+            <li class="item-thumbs col-lg-3 photography" data-id="id-3" data-type="illustrator">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Folia PET złota" href="{% static 'site/img/works/folia-pet-zlota-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/folia-pet-zlota-01-s.jpg' %}" alt="">
+            </li>
+            <!-- End Item Project -->
+          </ul>
+      </div>
+      <div class="row">
+      	 <ul id="thumbs" class="portfolio">
+      	<!-- Item Project and Filter Name -->
+            <li class="item-thumbs col-lg-3 photography" data-id="id-3" data-type="illustrator">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Folia PET czarna" href="{% static 'site/img/works/folia-pet-czarna-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/folia-pet-czarna-01-s.jpg' %}" alt="">
+            </li>
+            <!-- End Item Project -->
+            <!-- Item Project and Filter Name -->
+            <li class="item-thumbs col-lg-3 photography" data-id="id-3" data-type="illustrator">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Folia PET biała" href="{% static 'site/img/works/folia-pet-biala-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/folia-pet-biala-01-s.jpg' %}" alt="">
+            </li>
+            <!-- End Item Project -->
+            </ul>
+      </div>
+      </section>
+         </div>
+      </div>  <!-- /.row -->
+
+
+
+      </div> <!-- /.container -->
+
+    </section> <!-- /.features-section -->
+
+    <!-- Subscribe -->
+    <section class="subscribe-section" id="section-3">
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-12">
+
+            <!-- Title -->
+
+			 <h3>Efekty UV</h3>
+            <section id="projects">
+      	<div class="row">
+
+          <ul id="thumbs" class="portfolio">
+            <!-- Item Project and Filter Name -->
+            <li class="col-lg-3 design" data-id="id-0" data-type="web">
+            <div class="item-thumbs">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Lakier matowy" href="{% static 'site/img/works/lakier-mat-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/lakier-mat-01-s.jpg' %}" alt="">
+            </div>
+            </li>
+            <!-- End Item Project -->
+            <!-- Item Project and Filter Name -->
+            <li class="item-thumbs col-lg-3 design" data-id="id-1" data-type="icon">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Lakier pigmentowy na folii" href="{% static 'site/img/works/lakier-pigmentowy-na-folii-matowej-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/lakier-pigmentowy-na-folii-matowej-01-s.jpg' %}" alt="">
+            </li>
+            <!-- End Item Project -->
+            <!-- Item Project and Filter Name -->
+            <li class="item-thumbs col-lg-3 photography" data-id="id-2" data-type="illustrator">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Lakier brokatowy złoty" href="{% static 'site/img/works/lakier-brokatowy-zloty-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/lakier-brokatowy-zloty-01-s.jpg' %}" alt="">
+            </li>
+            <!-- End Item Project -->
+            <!-- Item Project and Filter Name -->
+            <li class="item-thumbs col-lg-3 photography" data-id="id-3" data-type="illustrator">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Lakier brokatowy na folii" href="{% static 'site/img/works/lakier-brokatowy-na-folii-pet-czarnej-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/lakier-brokatowy-na-folii-pet-czarnej-01-s.jpg' %}" alt="">
+            </li>
+            <!-- End Item Project -->
+          </ul>
+      </div>
+      <div class="row">
+      	 <ul id="thumbs" class="portfolio">
+      	<!-- Item Project and Filter Name -->
+            <li class="item-thumbs col-lg-3 photography" data-id="id-3" data-type="illustrator">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Lakier brokatowy na folii" href="{% static 'site/img/works/lakier-brokatowy-na-folii-zlotej-matowej-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/lakier-brokatowy-na-folii-zlotej-matowej-01s.jpg' %}" alt="">
+            </li>
+            <!-- End Item Project -->
+            <!-- Item Project and Filter Name -->
+            <li class="item-thumbs col-lg-3 photography" data-id="id-3" data-type="illustrator">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Lakier strukturalny na folii" href="{% static 'site/img/works/lakier-strukturalny-len-na-folii-matowej-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/lakier-strukturalny-len-na-folii-matowej-01s.jpg' %}" alt="">
+            </li>
+            <!-- End Item Project -->
+            <!-- Item Project and Filter Name -->
+            <li class="item-thumbs col-lg-3 photography" data-id="id-3" data-type="illustrator">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Lakier strukturalny" href="{% static 'site/img/works/lakier-strukturalny-piasek-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/lakier-strukturalny-piasek-01s.jpg' %}" alt="dający efekt piasku.">
+            </li>
+            <!-- End Item Project -->
+            <!-- Item Project and Filter Name -->
+            <li class="item-thumbs col-lg-3 photography" data-id="id-3" data-type="illustrator">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Lakier strukturalny" href="{% static 'site/img/works/lakier-strukturalny-gruby-01.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/lakier-strukturalny-gruby-01-s.jpg' %}" alt="">
+            </li>
+            <!-- End Item Project -->
+            <!-- Item Project and Filter Name -->
+            <li class="item-thumbs col-lg-3 photography" data-id="id-3" data-type="illustrator">
+            <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+            <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Lakier błyszczący na materiale niepowlekanym" href="{% static 'site/img/works/lakier-blyszczacy-na-papierze-niepowlekanym.jpg' %}">
+            <span class="overlay-img"></span>
+            <span class="overlay-img-thumb fa fa-eye"></span>
+            </a>
+            <!-- Thumb Image and Description -->
+            <img src="{% static 'site/img/works/lakier-blyszczacy-na-papierze-niepowlekanym-s.jpg' %}" alt="">
+            </li>
+            <!-- End Item Project -->
+            </ul>
+      </div>
+      </section>
+          </div> <!-- /.col-md-12 -->
+
+        </div> <!-- /.row -->
+
+      </div> <!-- /.container -->
+
+    </section> <!-- /.subscribe-section -->
+
+{% endblock container %}
+
+{% block scripts %}
+<script src="{% static 'site/js/site.js' %}"></script>
+<script src="{% static 'site/js/jquery.fancybox.pack.js' %}"></script>
+<script src="{% static 'site/js/jquery.fancybox-media.js' %}"></script>
+{% endblock scripts %}
+
