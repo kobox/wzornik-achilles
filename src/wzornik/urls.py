@@ -10,8 +10,8 @@ import patternbook.views
 
 urlpatterns = [
     url(r'^$', views.HomePage.as_view(), name='home'),
-    #url(r'^about/$', views.AboutPage.as_view(), name='about'),
-    url(r'^about/$', patternbook.views.add_signup , name='about'),
+    url(r'^about/$', views.AboutPage.as_view(), name='about'),
+    url(r'^order/$', patternbook.views.add_signup , name='order'),
     url(r'^thanks/$', patternbook.views.ThanksPage.as_view(), name='thanks'),
     url(r'^users/', include(profiles.urls, namespace='profiles')),
     url(r'^admin/', include(admin.site.urls)),
