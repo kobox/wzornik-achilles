@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import render_to_response, HttpResponse
 from django.template import RequestContext
 from .forms import SignUpForm
+from django.views import generic
 
 
 def add_signup(request):
@@ -19,7 +20,7 @@ def add_signup(request):
 
             # Now call the index() view.
             # The user will be shown the homepage.
-            return HttpResponse('/about/')
+            return HttpResponse('/thanks/')
         else:
             # The supplied form contained errors - just print them to the terminal.
             print form.errors
@@ -29,4 +30,7 @@ def add_signup(request):
 
     # Bad form (or form details), no form supplied...
     # Render the form with error messages (if any).
-    return render_to_response('templates/add_signup.html', {'form': form}, context)
+    return render_to_response('add_signup.html', {'form': form}, context)
+
+class ThanksPage(generic.TemplateView):
+    template_name = "thanks.html"

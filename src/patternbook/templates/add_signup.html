@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}{{ block.super }}Sign Up{% endblock %}
+
+{% block form_heading %}Signing Up is Free{% endblock %}
+
+{% block container %}
+<div class="container form-box">
+  <div class="text-center">
+    <h2>Zamów Wzornik Achilles</h2>
+  </div>
+  {% crispy form %}
+</div>
+
+{% endblock container %}
