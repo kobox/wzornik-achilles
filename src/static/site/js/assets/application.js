@@ -6,14 +6,13 @@ $(function() {
   $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
       || location.hostname == this.hostname) {
-
-      var target = $(this.hash);
+        var target = $(this.hash);
     target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
     if (target.length) {
-      if (target.selector.indexOf('section-2')>0)
-      _gaq.push(['_trackEvent', 'Click', 'Button Segregatory', 'Zobacz']);
+      //if (target.selector.indexOf('section-2')>0)
+      //_gaq.push(['_trackEvent', 'Click', 'Button Segregatory', 'Zobacz']);
       $('html,body').animate({
-        scrollTop: target.offset().top
+        scrollTop: target.offset().top - 50
       }, 1000);
         return false;
       }

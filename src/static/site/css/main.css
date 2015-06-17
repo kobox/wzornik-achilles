@@ -227,7 +227,7 @@ body>.navbar-transparent {
 .features-section {
   background: greenyellow url("/static/site/img/products-bg.png");
   text-align: left;
-  padding: 50px 0;
+  padding: 0px 0;
 }
 
 .features-section .row.row-padding {
@@ -307,7 +307,7 @@ body>.navbar-transparent {
 .subscribe-section {
   background: #2e2f41 url("/static/site/img/bg-2.png") 0 0 no-repeat;
   text-align: center;
-  padding: 25px 0;
+  padding: 0px 0;
   background-size: cover;
   color: white;
 }
